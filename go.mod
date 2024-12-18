@@ -1,1 +1,1 @@
-module OuterValidator
+module github.com/outercyrex/outervalidator
