@@ -10,7 +10,7 @@ import (
 func (v *Validator) Check(Struct interface{}) (bool, error) {
 	Fields, Values := reflect.TypeOf(Struct), reflect.ValueOf(Struct)
 	if Fields.Kind() != reflect.Struct {
-		panic("Object to check must be a struct")
+		return false, errors.New("[Validator]: Invalid Struct, ensure that the parameters are consistent with former struct")
 	}
 	for i := 0; i < Fields.NumField(); i++ {
 		field := Fields.Field(i)
